@@ -21,7 +21,7 @@
         };
 
         var singleCategorie = function (id) {
-            return $http.get("http://localhost:1949/api/Categorie/getCategorieById/" + id)
+            return $http.get("http://localhost:1949/api/Categorie/getOneCategorie/" + id)
                         .then(function (serviceResp) {
                             return serviceResp.data;
                         });

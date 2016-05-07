@@ -35,7 +35,7 @@
         };
 
         $scope.ModifyCategorie = function (existingCategorie) {
-            $log.info(existingCatgorie);
+            $log.info(existingCategorie);
             categoriesService.ModifyCategorie(existingCategorie).then(categoriesService.Categories().then(Categories, errorDetails));
         };
 

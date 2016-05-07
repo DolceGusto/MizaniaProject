@@ -211,6 +211,7 @@
     <Content Include="ControllersJs\CategorieBDController.js" />
     <Content Include="ControllersJs\TransactionDBController.js" />
     <Content Include="ControllersJs\UserBDController.js" />
+    <Content Include="EditCategorie.html" />
     <Content Include="EditCompte.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

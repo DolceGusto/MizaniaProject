@@ -65,7 +65,7 @@ namespace MizaniaSilProjet.App_Start.RoutesAnnuaire
                  defaults: new
                  {
                      controller = "Categorie",
-                     action = "updateAccount"
+                     action = "updateCategorie"
                  },
               constraints: new { id = @"\d+" }
               );
