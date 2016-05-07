@@ -4,6 +4,10 @@
             $scope.Accounts = data;
         };
 
+        var TotalAccounts = function (data) {
+            $scope.TotalAccounts = data;
+        };
+
         var singleAccount = function (data) {
             $scope.existingAccount = data;
             $log.info(data);
@@ -36,6 +40,7 @@
         $scope.user = user;
 
         accountsService.Accounts().then(Accounts, errorDetails);
+        accountsService.TotalAccounts().then(TotalAccounts, errorDetails);
 
         var errorDetails = function (serviceResp) {
             $scope.Error = "Something went wrong ??";

@@ -66,6 +66,18 @@ namespace MizaniaServices
            return _compteRepository.FindBy(d => d.idUtilisateur ==id);
        }
 
+       public double totalPortefeuille()
+       {
+           double montant=0;
+           IEnumerable<Compte> listeDesComptes = GetAllAccounts();
+           foreach (Compte account in listeDesComptes)
+           {
+               montant += account.solde; 
+           }
+
+           return montant; 
+       }
+
        
        
     }

@@ -9,6 +9,13 @@
                         });
         };
 
+        var TotalAccounts = function () {
+            return $http.get("http://localhost:1949/api/Compte/getTotalAccounts/")
+                        .then(function (serviceResp) {
+                            return serviceResp.data;
+                        });
+        };
+
         var InsertAccount = function (user, account) {
             var strFinal = "[" + JSON.stringify(user) + "," +
                        JSON.stringify(account) + "]";
@@ -47,6 +54,7 @@
         
         return {
             Accounts: Accounts,
+            TotalAccounts: TotalAccounts,
             singleAccount: singleAccount,
             InsertAccount: InsertAccount,
             ModifyAccount: ModifyAccount,

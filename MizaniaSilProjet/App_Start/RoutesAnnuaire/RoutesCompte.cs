@@ -22,6 +22,16 @@ namespace MizaniaSilProjet.App_Start.RoutesAnnuaire
          );
 
             config.Routes.MapHttpRoute(
+            name: "GetTotalAccounts",
+            routeTemplate: "api/Compte/getTotalAccounts/",
+            defaults: new
+            {
+                controller = "Compte",
+                action = "getTotalAccounts"
+            }
+         );
+
+            config.Routes.MapHttpRoute(
                name: "GetAccount",
                routeTemplate: "api/Compte/getOneAccount/{id}",
                defaults: new

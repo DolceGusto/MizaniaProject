@@ -18,6 +18,7 @@ namespace MizaniaServices
         bool UpdateAccount(Compte compte);
         IEnumerable<Compte> FindAccountsByUserID(int id);
         bool CreerUtilisateur(Utilisateur user, Compte compte);
+        double totalPortefeuille(); 
        
     }
 }

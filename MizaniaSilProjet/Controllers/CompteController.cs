@@ -35,6 +35,12 @@ namespace MizaniaSilProjet.Controllers
             return _compteService.GetAccountById(id); 
         }
 
+        [HttpGet]
+        public double getTotalAccounts()
+        {
+            return _compteService.totalPortefeuille();
+        }
+
        
         [HttpPost]  /*Permet d'ajouter un utilisateur */
         public HttpResponseMessage addAccount([FromBody]Compte account)
