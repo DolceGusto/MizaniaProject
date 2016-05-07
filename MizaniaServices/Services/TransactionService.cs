@@ -170,7 +170,32 @@ namespace MizaniaServices
                }
                return false;
            }
-       } 
+       }
+
+       public double totalDepenses()
+       {
+           double montant = 0;
+           IEnumerable<Transactions> listeDepenses = FindTransactionsDepense();
+           foreach (Transactions depense in listeDepenses)
+           {
+               montant += depense.montant ;
+           }
+
+           return montant;
+       }
+
+       public double totalRevenus()
+       {
+           double montant = 0;
+           IEnumerable<Transactions> listeRevenus = FindTransactionsEntree();
+           foreach (Transactions depense in listeRevenus)
+           {
+               montant += depense.montant;
+           }
+
+           return montant;
+       }
+
 
      
        

@@ -4,8 +4,16 @@
             $scope.Depenses = data;
         };
 
+        var TotalDepenses = function (data) {
+            $scope.TotalDepenses = data;
+        };
+
         var Revenus = function (data) {
             $scope.Revenus = data;
+        };
+
+        var TotalRevenus = function (data) {
+            $scope.TotalRevenus = data;
         };
 
         var Categories = function (data) {
@@ -41,6 +49,8 @@
 
         depensesService.Depenses().then(Depenses, errorDetails);
         depensesService.Revenus().then(Revenus, errorDetails);
+        depensesService.TotalDepenses().then(TotalDepenses, errorDetails);
+        depensesService.TotalRevenus().then(TotalRevenus, errorDetails);
         depensesService.Accounts().then(Accounts, errorDetails);
         depensesService.Categories().then(Categories, errorDetails);
 

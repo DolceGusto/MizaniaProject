@@ -19,5 +19,7 @@ namespace MizaniaServices
         bool CreateTransaction(Transactions transaction);
         IEnumerable<Transactions> FindTransactionsEntree();
         IEnumerable<Transactions> FindTransactionsDepense();
+        double totalDepenses();
+        double totalRevenus(); 
     }
 }

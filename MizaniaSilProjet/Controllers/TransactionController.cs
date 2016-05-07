@@ -27,13 +27,25 @@ namespace MizaniaSilProjet.Controllers
             return _transactionService.GetAllTransactions().ToList();
         }
 
-        [HttpGet] /* Retourne tous les utilisateurs */
+        [HttpGet] 
         public List<Transactions> getAllTransactionsEntrees()
         {
             return _transactionService.FindTransactionsEntree().ToList();
         }
 
-        [HttpGet] /* Retourne tous les utilisateurs */
+        [HttpGet]
+        public double getTotalDepenses()
+        {
+            return _transactionService.totalDepenses();
+        }
+
+        [HttpGet]
+        public double getTotalRevenus()
+        {
+            return _transactionService.totalRevenus();
+        }
+
+        [HttpGet] 
         public List<Transactions> getAllTransactionsDepenses()
         {
             return _transactionService.FindTransactionsDepense().ToList();
