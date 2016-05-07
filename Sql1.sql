@@ -1,0 +1,1 @@
+﻿INSERT INTO Transactions(idCompte,idCategorie,designation, typeTransact,montant) VALUES (7,1,'Patate','depense',23);
