@@ -41,6 +41,10 @@ app.config(function ($routeProvider) {
             templateUrl: "ListeTransactionsDepenses.html",
             controller: "TransactionBDController"
         })
+        .when("/TransactionsRevenus", {
+            templateUrl: "ListeTransactionsRevenus.html",
+            controller: "TransactionBDController"
+        })
         .when("/ajouterTransaction", {
             templateUrl: "AjouterTransaction.html",
             controller: "TransactionBDController"

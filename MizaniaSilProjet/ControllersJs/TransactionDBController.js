@@ -4,6 +4,10 @@
             $scope.Depenses = data;
         };
 
+        var Revenus = function (data) {
+            $scope.Revenus = data;
+        };
+
         var Categories = function (data) {
             $scope.Categories = data;
         };
@@ -36,6 +40,7 @@
         $scope.depense = depense;
 
         depensesService.Depenses().then(Depenses, errorDetails);
+        depensesService.Revenus().then(Revenus, errorDetails);
         depensesService.Accounts().then(Accounts, errorDetails);
         depensesService.Categories().then(Categories, errorDetails);
 

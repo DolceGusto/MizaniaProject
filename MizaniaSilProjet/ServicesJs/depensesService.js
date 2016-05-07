@@ -9,6 +9,13 @@
                         });
         };
 
+        var Revenus = function () {
+            return $http.get("http://localhost:1949/api/Transaction/getTransactEntrees/")
+                        .then(function (serviceResp) {
+                            return serviceResp.data;
+                        });
+        };
+
         var Categories = function () {
             return $http.get("http://localhost:1949/api/Categorie/getAll/")
                         .then(function (serviceResp) {
@@ -59,6 +66,7 @@
 
         return {
             Depenses: Depenses,
+            Revenus : Revenus, 
             Categories: Categories,
             Accounts : Accounts,
             singleCategorie: singleCategorie,
