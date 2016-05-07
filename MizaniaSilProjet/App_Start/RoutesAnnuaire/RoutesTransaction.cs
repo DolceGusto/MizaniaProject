@@ -19,6 +19,16 @@ namespace MizaniaSilProjet.App_Start.RoutesAnnuaire
                  action = "getAllTransactions"
              }
           );
+            config.Routes.MapHttpRoute(
+            name: "GetNomCategorie",
+            routeTemplate: "api/Transaction/getNomCategorie/{id}/{idCompte}",
+            defaults: new
+            {
+                controller = "Transaction",
+                action = "getNomCategorie"
+            },
+                constraints: new { id = @"\d+", idCompte = @"\d+" }
+         );
 
             config.Routes.MapHttpRoute(
              name: "GetTotalDepenses",

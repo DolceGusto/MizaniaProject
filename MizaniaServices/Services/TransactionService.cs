@@ -15,14 +15,16 @@ namespace MizaniaServices
 
         private IGenericRepository<Transactions> _transactionRepository;
         private IGenericRepository<Compte> _compteRepository;
+        private IGenericRepository<Categorie> _categorieRepository;
 
         private const string DEPENSE = "DEPENSE";
         private const string ENTREE = "ENTREE";
 
-       public TransactionService(IGenericRepository<Transactions> transactionRepository, IGenericRepository<Compte> compteRepository)
+        public TransactionService(IGenericRepository<Transactions> transactionRepository, IGenericRepository<Compte> compteRepository, IGenericRepository<Categorie> categorieRepository)
        {
            this._transactionRepository = transactionRepository;
-           this._compteRepository = compteRepository; 
+           this._compteRepository = compteRepository;
+           this._categorieRepository = categorieRepository;
        }
 
        public bool CreateTransaction(Transactions transaction)
@@ -195,6 +197,14 @@ namespace MizaniaServices
 
            return montant;
        }
+
+
+        public string nomCatgorieTransaction(int idTransaction, int idCompte)
+        {
+            Transactions transaction = _transactionRepository.GetByID(idTransaction,idCompte);
+            Categorie categorie = _categorieRepository.GetByID(transaction.idCategorie);
+            return categorie.designation;
+        }
 
 
      

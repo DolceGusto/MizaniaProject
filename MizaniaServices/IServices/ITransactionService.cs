@@ -20,6 +20,7 @@ namespace MizaniaServices
         IEnumerable<Transactions> FindTransactionsEntree();
         IEnumerable<Transactions> FindTransactionsDepense();
         double totalDepenses();
-        double totalRevenus(); 
+        double totalRevenus();
+        string nomCatgorieTransaction(int idTransaction,int idCompte); 
     }
 }

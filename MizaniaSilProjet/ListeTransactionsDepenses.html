@@ -248,9 +248,6 @@
                                         Designation
                                     </th>
                                     <th>
-                                        Categorie
-                                    </th>
-                                    <th>
                                         Date
                                     </th>
                                     <th>
@@ -267,10 +264,8 @@
                             <tbody>
                                 <tr ng-repeat="depense in Depenses">
                                     <td>
+                                        <img src="{{depense.idCategorie}}.png" width="30px" height="30px" style="margin-right:8px;" />
                                         {{depense.designation}}
-                                    </td>
-                                    <td>
-                                        {{depense.idCategorie}}
                                     </td>
                                     <td>
                                         {{depense.dateCreation}}

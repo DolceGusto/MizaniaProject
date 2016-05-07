@@ -4,6 +4,11 @@
             $scope.Depenses = data;
         };
 
+     /*  var NomCategorie2 = function (data) {
+            $scope.NomCategorie2 = data;
+       };*/
+       
+
         var TotalDepenses = function (data) {
             $scope.TotalDepenses = data;
         };
@@ -48,6 +53,7 @@
         $scope.depense = depense;
 
         depensesService.Depenses().then(Depenses, errorDetails);
+      //  depensesService.NomCategorie(depense.id,depense.idCompte).then(NomCategorie, errorDetails);
         depensesService.Revenus().then(Revenus, errorDetails);
         depensesService.TotalDepenses().then(TotalDepenses, errorDetails);
         depensesService.TotalRevenus().then(TotalRevenus, errorDetails);
@@ -63,6 +69,10 @@
 
         };
 
+   /*    $scope.NomCategorie = function (id, idCompte) {
+            depensesService.NomCategorieDepense(id,idCompte).then(NomCategorie2, errorDetails));
+    };*/
+
         $scope.ModifyDepense = function (existingDepense) {
             $log.info(existingDepense);
             depensesService.ModifyDepense(existingDepense).then(depensesService.Depenses().then(Depenses, errorDetails));
@@ -75,9 +85,6 @@
                     .then(Depenses, errorDetails);
             }
         };
-
-
-
     };
     app.controller("TransactionBDController", ["$scope", "depensesService", "$log", "$routeParams", TransactionBDController]);
 }());

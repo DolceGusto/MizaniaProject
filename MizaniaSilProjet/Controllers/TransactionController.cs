@@ -52,6 +52,11 @@ namespace MizaniaSilProjet.Controllers
         }
 
         [HttpGet]
+        public string getNomCategorie(int id, int idCompte)
+        {
+            return _transactionService.nomCatgorieTransaction(id,idCompte) ;
+        }
+        [HttpGet]
         public Transactions getOneTransaction(int id, int idCompte)
         {
             return _transactionService.GetTransactionById(id, idCompte);

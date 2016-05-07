@@ -33,6 +33,8 @@ namespace MizaniaSilProjet.Controllers
             return _categorieService.GetCategorieById(id); 
         }
 
+
+
        
         [HttpPost]  /*Permet d'ajouter une catégorie */
         public HttpResponseMessage addCategorie([FromBody]Categorie categorie)

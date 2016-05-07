@@ -221,6 +221,7 @@
     <Content Include="ListeCategories.html" />
     <Content Include="ListeComptes.html" />
     <Content Include="ListeTransactionsDepenses.html" />
+    <Content Include="ListeTransactionsRevenus.html" />
     <Content Include="ListeUsers.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
