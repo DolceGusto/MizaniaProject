@@ -49,6 +49,10 @@ app.config(function ($routeProvider) {
             templateUrl: "AjouterTransaction.html",
             controller: "TransactionBDController"
         })
+        .when("/Dashboard", {
+            templateUrl: "TableauDeBord.html",
+            controller: "TransactionBDController"
+        })
 
 
         

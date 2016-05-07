@@ -211,7 +211,6 @@
     <Content Include="ControllersJs\CategorieBDController.js" />
     <Content Include="ControllersJs\TransactionDBController.js" />
     <Content Include="ControllersJs\UserBDController.js" />
-    <Content Include="EditCategorie.html" />
     <Content Include="EditCompte.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -222,7 +221,6 @@
     <Content Include="ListeCategories.html" />
     <Content Include="ListeComptes.html" />
     <Content Include="ListeTransactionsDepenses.html" />
-    <Content Include="ListeTransactionsRevenus.html" />
     <Content Include="ListeUsers.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
