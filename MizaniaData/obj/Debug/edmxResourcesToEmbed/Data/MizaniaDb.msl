@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MizaniaDataModelStoreContainer" CdmEntityContainer="DbContextEntities">
+    <EntitySetMapping Name="Categorie">
+      <EntityTypeMapping TypeName="MizaniaDataModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPorteFeuille" ColumnName="idPorteFeuille" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="descript" ColumnName="descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compte">
+      <EntityTypeMapping TypeName="MizaniaDataModel.Compte">
+        <MappingFragment StoreEntitySet="Compte">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUtilisateur" ColumnName="idUtilisateur" />
+          <ScalarProperty Name="solde" ColumnName="solde" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="descript" ColumnName="descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PorteFeuille">
+      <EntityTypeMapping TypeName="MizaniaDataModel.PorteFeuille">
+        <MappingFragment StoreEntitySet="PorteFeuille">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="dateCreation" ColumnName="dateCreation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Privilege">
+      <EntityTypeMapping TypeName="MizaniaDataModel.Privilege">
+        <MappingFragment StoreEntitySet="Privilege">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrivilegeUtilisateur">
+      <EntityTypeMapping TypeName="MizaniaDataModel.PrivilegeUtilisateur">
+        <MappingFragment StoreEntitySet="PrivilegeUtilisateur">
+          <ScalarProperty Name="idUtilisateur" ColumnName="idUtilisateur" />
+          <ScalarProperty Name="idPrivilege" ColumnName="idPrivilege" />
+          <ScalarProperty Name="dateCreation" ColumnName="dateCreation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionPeriodique">
+      <EntityTypeMapping TypeName="MizaniaDataModel.TransactionPeriodique">
+        <MappingFragment StoreEntitySet="TransactionPeriodique">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCompte" ColumnName="idCompte" />
+          <ScalarProperty Name="idCategorie" ColumnName="idCategorie" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="dateCreation" ColumnName="dateCreation" />
+          <ScalarProperty Name="frequence" ColumnName="frequence" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="typeTransact" ColumnName="typeTransact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="MizaniaDataModel.Transactions">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCompte" ColumnName="idCompte" />
+          <ScalarProperty Name="idCategorie" ColumnName="idCategorie" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="dateCreation" ColumnName="dateCreation" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="typeTransact" ColumnName="typeTransact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfert">
+      <EntityTypeMapping TypeName="MizaniaDataModel.Transfert">
+        <MappingFragment StoreEntitySet="Transfert">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCompteExpediteur" ColumnName="idCompteExpediteur" />
+          <ScalarProperty Name="idCompteRecepteur" ColumnName="idCompteRecepteur" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="dateCreation" ColumnName="dateCreation" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateur">
+      <EntityTypeMapping TypeName="MizaniaDataModel.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPorteFeuille" ColumnName="idPorteFeuille" />
+          <ScalarProperty Name="idFacebook" ColumnName="idFacebook" />
+          <ScalarProperty Name="nomDeCompte" ColumnName="nomDeCompte" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="roleUtilisateur" ColumnName="roleUtilisateur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
