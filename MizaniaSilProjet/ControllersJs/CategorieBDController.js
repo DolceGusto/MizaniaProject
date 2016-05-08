@@ -35,7 +35,7 @@
         };
 
         $scope.ModifyCategorie = function (existingCategorie) {
-            $log.info(existingCategorie);
+           // $log.info(existingCatgorie);
             categoriesService.ModifyCategorie(existingCategorie).then(categoriesService.Categories().then(Categories, errorDetails));
         };
 
@@ -44,6 +44,7 @@
             if (confirm("Etes-vous sûr de vouloir supprimer cette catégorie ?")) {
                 categoriesService.deleteCategorie(categorie)
                     .then(Categories, errorDetails);
+                return true;
             }
         };
 
