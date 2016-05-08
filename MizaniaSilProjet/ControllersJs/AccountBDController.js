@@ -46,8 +46,8 @@
             $scope.Error = "Something went wrong ??";
         };
 
-        $scope.InsertAccount = function (user,account) {
-            accountsService.InsertAccount(user,account);
+        $scope.InsertAccount = function (account) {
+            accountsService.InsertAccount(account).then(accountsService.Accounts().then(Accounts, errorDetails));;
         };
 
         $scope.ModifyAccount = function (existingAccount) {

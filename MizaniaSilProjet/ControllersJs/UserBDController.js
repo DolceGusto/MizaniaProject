@@ -22,7 +22,14 @@
         };
 
 
-
+        var account = {
+            id: null,
+            designation: null,
+            descript: null,
+            solde: null,
+            idUtilisateur: 13
+        };
+        $scope.account = account;
 
         var user = {
             id: null,
@@ -30,7 +37,8 @@
             prenom: null,
             nomDeCompte: null,
             roleUtilisateur: null,
-            idPorteFeuille: null
+            idFacebook: 123456,
+            idPorteFeuille: 1
         };
         $scope.user = user;
 
@@ -40,9 +48,8 @@
             $scope.Error = "Something went wrong ??";
         };
 
-        $scope.InsertUser = function (user) {
-            usersService.InsertUser(user).then(usersService.Users().then(Users, errorDetails));
-
+        $scope.InsertUser = function (user, account) {
+            usersService.InsertUser(user, account);
         };
 
         $scope.ModifyUser = function (existingUser) {

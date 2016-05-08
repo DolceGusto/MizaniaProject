@@ -83,6 +83,7 @@
             if (confirm("Etes-vous sûr de vouloir supprimer cette dépense ?")) {
                 depensesService.deleteDepense(depense)
                     .then(Depenses, errorDetails);
+                return true;
             }
         };
     };
