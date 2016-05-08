@@ -99,6 +99,41 @@ it('ServiceDeleteAccountTestSpec', function () {
 
 
 });
+it('ServiceAddAccountTestSpec', function () {
+
+    var returnData = {};
+    var account3 = {
+        id: 5,
+        designation: 'SilaCCP2',
+        descript: 'CompteCCP2',
+        solde: 0,
+        idUtilisateur: 1
+    };
+    var user = {
+        id: 1,
+        idPorteFeuille: 1,
+        nomDeCompte: 'SilaCompte',
+        nom: 'Manissa',
+        prenom: 'Manissa',
+        roleUtilisateur: 'createur'
+    };
+
+    var strFinal = "[" + JSON.stringify(user) + "," + JSON.stringify(account3) + "]";
+
+    // Définir expectGet sur le fake httpBackend qui fait un appel du service voulu en utilisant l'url 
+
+    httpBackend.expectPOST("http://localhost:1949/api/Compte/addUserV", strFinal).respond(returnData);
+
+    var returnedPromise = accountsService.InsertAccount(user, account3);
+
+    httpBackend.whenGET('Home.html').respond(200, '');
+
+    httpBackend.flush();  //Permet d'exécuter la requête expectGet 
+
+
+});
+
+
 
 
 
