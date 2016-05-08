@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MizaniaData.IGenericRepository;
-using MizaniaData.Data; 
+using MizaniaData.Data;
+using System.Transactions; 
 
 
 namespace MizaniaServices
@@ -12,12 +13,14 @@ namespace MizaniaServices
     {
         private IGenericRepository<Utilisateur> _userRepository;
         private IGenericRepository<Compte> _compteRepository;
+        private IGenericRepository<Transactions> _transactionRepository;
 
-       public CompteService(IGenericRepository<Utilisateur> userRepository, IGenericRepository<Compte> compteRepository)
-       {
-           this._userRepository = userRepository;
-           this._compteRepository = compteRepository; 
-       }
+        public CompteService(IGenericRepository<Utilisateur> userRepository, IGenericRepository<Compte> compteRepository, IGenericRepository<Transactions> transactionRepository)
+        {
+            this._userRepository = userRepository;
+            this._compteRepository = compteRepository;
+            this._transactionRepository = transactionRepository;
+        }
 
 
        public bool CreerUtilisateur(Utilisateur user, Compte compte)
@@ -43,15 +46,34 @@ namespace MizaniaServices
                return true;
            else return false;
        }
-         
+
 
        public bool DeleteAccount(int id)
        {
-           if (_compteRepository.Delete(id))
-               return true; 
-           else return false; 
+           using (var scope = new TransactionScope())
+           {
+               List<Transactions> transactionsDuCompte = _transactionRepository.FindBy(d => d.idCompte == id).ToList();
+               if (transactionsDuCompte.Count() != 0)
+               {
+                   foreach (Transactions t in transactionsDuCompte)
+                   {
+                       _transactionRepository.Delete(t.id, t.idCompte);
+                   }
+               }
+
+               if (_compteRepository.Delete(id))
+               {
+                   {
+                       scope.Complete();
+                       return true;
+                   }
+               }
+               else return false;
+           }
           
+
        }
+        
         
 
        public bool UpdateAccount(Compte compte)
